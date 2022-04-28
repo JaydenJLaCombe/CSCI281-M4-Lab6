@@ -33,7 +33,8 @@ public class ShipDriver {
             JOptionPane.showMessageDialog(null, errorMessage, "File Missing!", 2);
             System.exit(0);
 
-        } {
+        }
+        {
 
             String message = "The file: \"" + fileName + "\" has been located\n";
 
@@ -55,7 +56,7 @@ public class ShipDriver {
                 int tempYear = inScan.nextInt();
                 String tempFlag = inScan.next();
 
-                myShip.add(new Ship(tempName, tempYear, tempFlag));
+                myShip.add(new Ship(tempName, tempFlag, tempYear));
 
             }
 
@@ -63,8 +64,7 @@ public class ShipDriver {
 
             inScan.close();
 
-        }
-        catch(IOException ioe) {
+        } catch (IOException ioe) {
 
             String errorMessage = "!!!!!!!!!!!!!!!!!!!!\n" +
                     "Trouble opening file " + fileName +
@@ -78,10 +78,20 @@ public class ShipDriver {
         String message = "there are " + myShip.size() + " ships in my list";
         JOptionPane.showMessageDialog(null, message, "File Missing!", 1);
 
-        // Create a for loop to iterate through the list of ships
+        //  Create a for loop to iterate through the list of ships
         //  to create a string accumulator of the books using the
         //  toString method from each ship
 
-    }
+        String shipList = "Our Fleet :\n";
 
+        int dex = 0;
+
+        for (dex = 0; dex < myShip.size(); dex++) {
+
+            shipList += dex + 1 + ": " + myShip.get(dex) + "\n";
+
+        }
+
+        JOptionPane.showMessageDialog(null, shipList);
+    }
 }

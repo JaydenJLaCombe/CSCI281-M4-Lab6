@@ -19,9 +19,6 @@ public class Ship {
 
  }
 
-    public Ship(String tempName, int tempYear, String tempFlag) {
-    }
-
     public String toString() {
 
      return (getShipName() + ", " + getShipYear() + ", Flag: " + getShipFlag());
